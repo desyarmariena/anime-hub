@@ -4,6 +4,16 @@
 .heading {
   margin-bottom: 2rem;
 }
+
+.input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border-color: gray;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 250px;
+}
+
 .anime {
   display: flex;
   flex-direction: column;
