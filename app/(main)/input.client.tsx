@@ -13,6 +13,10 @@ export default function Input() {
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams.toString())
       params.set(name, value)
+      params.delete('page')
+      if (value === '') {
+        params.delete(name)
+      }
 
       return params.toString()
     },
@@ -30,7 +34,7 @@ export default function Input() {
           router.push(pathname + '?' + createQueryString('search', keyword))
         }
       }}
-      className={styles.input}
+      className={styles.filter__search}
     />
   )
 }

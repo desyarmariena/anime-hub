@@ -5,11 +5,21 @@
   margin-bottom: 2rem;
 }
 
-.input {
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.filter__pagination {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.filter__search {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border-color: gray;
-  margin-bottom: 2rem;
   width: 100%;
   max-width: 250px;
 }
