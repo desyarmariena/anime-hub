@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import Image from 'next/image'
 import styles from './page.module.css'
 import {Anime} from '@/types/anime'
@@ -22,7 +24,7 @@ type AnimeResponse = {
 export default async function Home({
   searchParams,
 }: {
-  searchParams: {search: string; page: string}
+  searchParams: Promise<{search: string; page: string}>
 }) {
   const keyword = (await searchParams).search
   const page = (await searchParams).page

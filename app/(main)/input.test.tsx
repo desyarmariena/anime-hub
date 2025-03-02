@@ -56,7 +56,7 @@ describe('input component', () => {
   })
 
   test('navigates with search query when Enter key is pressed', () => {
-    global.URLSearchParams = jest.fn().mockImplementation(x => ({
+    global.URLSearchParams = jest.fn().mockImplementation(() => ({
       toString: jest.fn().mockReturnValue('search=one%20piece'),
       set: jest.fn(),
       delete: jest.fn(),
@@ -101,7 +101,7 @@ describe('input component', () => {
     ;(useSearchParams as jest.Mock).mockReturnValue(mockSearchParamsWithPage)
 
     const deleteMock = jest.fn()
-    global.URLSearchParams = jest.fn().mockImplementation(x => ({
+    global.URLSearchParams = jest.fn().mockImplementation(() => ({
       toString: jest.fn().mockReturnValue('search=one%20piece'),
       set: jest.fn(),
       delete: deleteMock,
@@ -126,7 +126,7 @@ describe('input component', () => {
     ;(useSearchParams as jest.Mock).mockReturnValue(mockSearchParamsWithSearch)
 
     const deleteMock = jest.fn()
-    global.URLSearchParams = jest.fn().mockImplementation(x => ({
+    global.URLSearchParams = jest.fn().mockImplementation(() => ({
       toString: jest.fn().mockReturnValue('search=one%20piece'),
       set: jest.fn(),
       delete: deleteMock,

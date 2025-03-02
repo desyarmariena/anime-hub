@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -6,7 +8,11 @@ import Episodes from './episodes'
 import styles from './page.module.css'
 import Navigate from './navigate.client'
 
-export default async function AnimeDetail({params}: {params: {id: string}}) {
+export default async function AnimeDetail({
+  params,
+}: {
+  params: Promise<{id: string}>
+}) {
   const {id} = await params
   const {data}: {data: Anime} = await fetch(
     `https://api.jikan.moe/v4/anime/${id}/full`,

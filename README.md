@@ -2,6 +2,8 @@
 
 API Resource: https://docs.api.jikan.moe
 
+Deployed link: https://anime-hub-37s.pages.dev/
+
 ## Getting Started
 
 Setup the project locally and run the development server:
