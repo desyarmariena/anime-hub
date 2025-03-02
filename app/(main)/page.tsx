@@ -6,6 +6,7 @@ import {Anime} from '@/types/anime'
 import Input from './input.client'
 import Pagination from './pagination.client'
 import Link from 'next/link'
+import {VideoOff} from 'lucide-react'
 
 type AnimeResponse = {
   data: Anime[]
@@ -47,18 +48,29 @@ export default async function Home({
         />
       </div>
       <div className={styles.page}>
-        {data.map(anime => (
-          <Link
-            href={`/${anime.mal_id}`}
-            key={anime.mal_id}
-            className={styles.anime}
-          >
-            <h3 className={styles.anime__title}>{anime.title}</h3>
-            <div className={styles.anime__image}>
-              <Image src={anime.images.webp.image_url} alt={anime.title} fill />
-            </div>
-          </Link>
-        ))}
+        {data.length === 0 ? (
+          <div className={styles.page__empty}>
+            <VideoOff size="100" />
+            <p>Anime not found.</p>
+          </div>
+        ) : (
+          data.map(anime => (
+            <Link
+              href={`/${anime.mal_id}`}
+              key={anime.mal_id}
+              className={styles.anime}
+            >
+              <h3 className={styles.anime__title}>{anime.title}</h3>
+              <div className={styles.anime__image}>
+                <Image
+                  src={anime.images.webp.image_url}
+                  alt={anime.title}
+                  fill
+                />
+              </div>
+            </Link>
+          ))
+        )}
       </div>
     </main>
   )
