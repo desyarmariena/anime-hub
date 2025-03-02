@@ -1,6 +1,3 @@
-.main {
-  padding: 3rem 4rem;
-}
 .heading {
   margin-bottom: 2rem;
 }
@@ -14,6 +11,12 @@
   display: flex;
   gap: 0.5rem;
   justify-content: flex-end;
+}
+.filter__pagination button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .filter__search {
@@ -46,6 +49,7 @@
   height: auto;
   aspect-ratio: 160/225;
 }
+
 .page {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

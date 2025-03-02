@@ -3,6 +3,7 @@ import styles from './page.module.css'
 import {Anime} from '@/types/anime'
 import Input from './input.client'
 import Pagination from './pagination.client'
+import Link from 'next/link'
 
 type AnimeResponse = {
   data: Anime[]
@@ -34,7 +35,7 @@ export default async function Home({
   ).then(data => data.json())
 
   return (
-    <main className={styles.main}>
+    <main>
       <h1 className={styles.heading}>TV Series/Anime</h1>
       <div className={styles.filter}>
         <Input />
@@ -45,12 +46,16 @@ export default async function Home({
       </div>
       <div className={styles.page}>
         {data.map(anime => (
-          <div key={anime.mal_id} className={styles.anime}>
+          <Link
+            href={`/${anime.mal_id}`}
+            key={anime.mal_id}
+            className={styles.anime}
+          >
             <h3 className={styles.anime__title}>{anime.title}</h3>
             <div className={styles.anime__image}>
               <Image src={anime.images.webp.image_url} alt={anime.title} fill />
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </main>

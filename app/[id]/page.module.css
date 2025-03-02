@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.back {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+.detail {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.detail__image {
+  position: relative;
+  max-width: 300px;
+  min-width: 200px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 160/225;
+}
+
+.detail__description {
+  min-width: 200px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail__title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.episodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.anime {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.anime__title {
+  opacity: 0.8;
+  font-size: 0.8em;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.anime__image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 200/160;
+  border-radius: 8px;
+}
+
+.anime__image img {
+  object-fit: contain;
+}

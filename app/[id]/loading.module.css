@@ -1,0 +1,27 @@
+.animate {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.loading {
+  background-color: #364153;
+  border-radius: 4px;
+  height: 18px;
+}
+.loading__title {
+  width: 250px;
+  height: 26px;
+  background-color: #364153;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
