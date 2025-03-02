@@ -18,12 +18,13 @@ export default function Pagination({
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
-  if (!hasNextPage) return null
+  if (!hasNextPage && currentPage === 1) return null
   return (
     <div className={styles.filter__pagination}>
       {currentPage !== 1 && (
         <button
           type="button"
+          data-testid="prev-page"
           onClick={() => {
             router.push(
               pathname +
@@ -39,22 +40,25 @@ export default function Pagination({
           <ChevronLeft />
         </button>
       )}
-      <button
-        type="button"
-        onClick={() => {
-          router.push(
-            pathname +
-              '?' +
-              createQueryString(
-                searchParams.toString(),
-                'page',
-                String(currentPage + 1),
-              ),
-          )
-        }}
-      >
-        <ChevronRight />
-      </button>
+      {hasNextPage ? (
+        <button
+          type="button"
+          data-testid="next-page"
+          onClick={() => {
+            router.push(
+              pathname +
+                '?' +
+                createQueryString(
+                  searchParams.toString(),
+                  'page',
+                  String(currentPage + 1),
+                ),
+            )
+          }}
+        >
+          <ChevronRight />
+        </button>
+      ) : null}
     </div>
   )
 }
