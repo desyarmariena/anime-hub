@@ -1,5 +1,3 @@
-import {useSearchParams} from 'next/navigation'
-
 export const createQueryString = (
   currentParams: string,
   name: string,
